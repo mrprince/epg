@@ -2,12 +2,13 @@ name: Example Push Action
 on:
   push:
   schedule:
-    - cron: '30 23 * * *'
+    - cron: '0 18 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - continue-on-error: true
       - run: |
           rm -rf e.xml.gz
           wget http://epg.51zmt.top:8000/e.xml.gz
