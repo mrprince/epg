@@ -2,7 +2,7 @@ name: Example Push Action
 on:
   push:
   schedule:
-    - cron: '30 */2 * * *'
+    - cron: '30 16,22 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
