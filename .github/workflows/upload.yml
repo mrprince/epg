@@ -2,18 +2,18 @@ name: Example Push Action
 on:
   push:
   schedule:
-    - cron: '0 18 * * *'
+    - cron: '30 23 * * *'
 jobs:
-  myjob:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - continue-on-error: true
       - run: |
           rm -rf e.xml.gz
           wget http://epg.51zmt.top:8000/e.xml.gz
+          echo "Hi, now date is" `date` > date.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
           git commit -m "generated"
-          git push
+          git push -- force
