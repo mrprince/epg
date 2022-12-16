@@ -11,7 +11,7 @@ jobs:
       - run: |
           rm -rf e.xml.gz
           wget http://epg.51zmt.top:8000/e.xml.gz
-          echo "Hi, now date is" `date` > date.txt
+          echo "Hi, now date is" `date` > README.md
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
