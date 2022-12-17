@@ -9,8 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          rm -rf pp.xml.gz
+          rm -rf pp.xml.gz e.xml.gz
           wget --inet4-only https://epg.112114.xyz/pp.xml.gz
+          wget --inet4-only http://epg.51zmt.top:8000/e.xml.gz
           echo "Hi, now date is" `date` > README.md
           git config user.name github-actions
           git config user.email github-actions@github.com
