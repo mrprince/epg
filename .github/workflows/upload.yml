@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          set -e
+          set +e
           wget --tries 1 --timeout=10 -O pp.xml.gz "https://epg.112114.xyz/pp.xml.gz" 
           wget --inet4-only --tries 1 --timeout=10 -O e.xml.gz "http://epg.51zmt.top:8000/e.xml.gz" 
           echo "Hi, now date is" `date` > README.md
