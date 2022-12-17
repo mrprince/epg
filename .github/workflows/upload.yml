@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           wget --tries 1 --timeout=10 -O pp.xml.gz "https://epg.112114.xyz/pp.xml.gz" >/dev/null 
-          wget --inet4-only --tries 1 --timeout=10 -O e.xml.gz "http://epg.51zmt.top:8000/e.xml.gz" >/dev/null
+          wget -q --inet4-only --tries 1 --timeout=10 -O e.xml.gz "http://epg.51zmt.top:8000/e.xml.gz" >/dev/null
           echo "Hi, now date is" `date` > README.md
           git config user.name github-actions
           git config user.email github-actions@github.com
